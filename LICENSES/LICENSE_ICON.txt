@@ -1,0 +1,8 @@
+ICON USED FOR THE FIREFOX EXTENSION
+-----------------------------------
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+Insert the attribution line close to where you're using the resource. If it's not possible, place it in the credits section.
+
+For example: 'image: Flaticon.com'. This cover has been designed using resources from Flaticon.com

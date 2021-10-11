@@ -1,0 +1,17 @@
+[Unit]
+Description=Daemon component of the FAP Video system.
+After=network-online.target
+ 
+[Service]
+Type=simple
+ 
+User=root
+Group=root
+UMask=007
+ 
+ExecStart=/opt/fap/daemon.py %i
+ 
+Restart=on-failure
+ 
+[Install]
+WantedBy=multi-user.target

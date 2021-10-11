@@ -1,0 +1,112 @@
+<!-- Copyright (c) Viveris Technologies. //-->
+<!-- Licensed under the MIT license. See LICENSE file in the project root for details. //-->
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FAP-Video</title>
+  <link rel="stylesheet" type="text/css" href="./webboost/injectees/bootstrap/3.1.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/mainpage.css"/>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+    <div class="warningDaemon"> <span id="warningIcon">&#9888;</span><span id="warningMessage"> Cannot connect to Daemon</span></div> 
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Consumption Statistics
+        </div>
+        <div class="panel-stats">
+	  <div><div class="stat-type">Consumed Data</div><span class="normal" id="nextRenewal"></span></div>
+          <div>
+            <div class="stat-name">Downloaded : </div>
+            <span class="stat-value" id="consumDataDl"></span><span class="stat-limit" id="limitDataDl"></span>
+          </div>
+          <div>
+            <div class="stat-name">Uploaded : </div>
+            <span class="stat-value" id="consumDataUl"></span><span class="stat-limit" id="limitDataUl"></span>
+          </div>
+        </div>
+        <div class="panel-stats">
+	  <div><div class="stat-type">Unlimited Data</div><span class="normal" id="unlimPeriod"></span></div>
+          <div><div class="stat-name">Downloaded : </div><span class="stat-value" id="unlimDataDl"></span></div>
+          <div><div class="stat-name">Uploaded : </div><span class="stat-value" id="unlimDataUl"></span></div>
+        </div>
+        <div class="panel-stats">
+	  <div><div class="stat-type">Total Data</div></div>
+          <div><div class="stat-name">Downloaded : </div><span class="stat-value" id="totalDataDl"></span></div>
+          <div><div class="stat-name">Uploaded : </div><span class="stat-value" id="totalDataUl"></span></div>
+        </div>
+        <div class="center-buttons-container">
+          <button type="button" class="btn-wb" id="contractualSettingsButton">Contractual Settings</button>
+	</div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Saving Data Features
+        </div>
+	<div class="panel-features">
+	  <div><div class="saving-feature" title="Use original plugin 'uBlock' to block ads.">Block ads (<u><A HREF="popup-fenix.html">Conf</A></u>) :</div> 
+	    <span class="switch-container">
+              <input type="checkbox" class="switch" id="blockAdsSwitch"/>
+              <label for="blockAdsSwitch" class="switch-tail"></label>
+            </span>
+	  </div>
+
+	  <div><div class="saving-feature" title="Block videos which start playing automatically.">Block automatic videos :</div> 
+	    <span class="switch-container">
+              <input type="checkbox" class="switch" id="blockVideosSwitch"/>
+              <label for="blockVideosSwitch" class="switch-tail"></label>
+            </span>
+	  </div>
+
+	  <div><div class="saving-feature" title="If the browsed website contains videos, a popup message appears to remind the available features to reduce data consumption." id="remindAdvices">Display pop-up :</div> 
+	  <span class="switch-container">
+            <input type="checkbox" class="switch" id="reminderSwitch"/>
+            <label for="reminderSwitch" class="switch-tail"></label>
+          </span>
+	  </div>
+
+	  <div><div class="saving-feature" title="Use original plugin 'WebBoost' to boost web browsing while reducing data consumption.">Web Boost :</div> 
+	  <span class="switch-container">
+            <input type="checkbox" class="switch" id="wbSwitch"/>
+            <label for="wbSwitch" class="switch-tail"></label>
+          </span>
+	  </div>
+	    
+	  <div><div class="saving-feature" title="Limit the download rate (in Kbps) to force video players to automatically adapt the quality of the video. Check 'INFO' link for additional information.">Limit Video Quality (<u><A HREF="info.html">Info</A></u>) :</div> 
+	    <span class="input-container">
+              <input type="number" id="limitQuality" min="1" step="1" size="8">
+              <label for="limitQuality">Kbps</label>
+            </span>
+	  </div>
+
+        </div>
+      </div>
+
+      <div class="center-buttons-container">
+        <button type="button" class="btn-wb" id="daemonSettingsButton">Daemon Settings</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="mainpage.js"></script>
+<script src="utils/utils.js"></script>
+<script src="webboost/mainpage_wb.js"></script>
+<script src="js/vapi.js"></script>
+<script src="js/vapi-common.js"></script>
+<script src="js/vapi-client.js"></script>
+<script src="js/udom.js"></script>
+<script src="js/ublock-bridge.js"></script>
+
+</body>
+</html>
+
+

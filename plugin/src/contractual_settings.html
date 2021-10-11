@@ -1,0 +1,98 @@
+<!-- Copyright (c) Viveris Technologies. //-->
+<!-- Licensed under the MIT license. See LICENSE file in the project root for details. //-->
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FAP-Video</title>
+  <link rel="stylesheet" type="text/css" href="./webboost/injectees/bootstrap/3.1.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/contractual_settings.css"/>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Contractual Information Settings
+        </div>
+        <div class="panel-contract-info">
+          <form name="contractSettings">
+
+            <li>
+            <label class="normal" for="monthlyRenewalDay">Monthly contract anniversary :</label>
+            <input class="contract-info" type="number" id="monthlyRenewalDay" name="monthlyRenewalDay" min="1" step="1" max="28" lang="en">
+            </li><br>
+
+            <li>
+            <label class="normal" for="limitDataDl"> Download data limit :</label>
+            <input class="contract-info" type="number" id="limitDataDl" name="limitDataDl" min="1" step="1" lang="en">
+            <label class="normal" for="limitDataDl">Gb</label>
+            </li><br>
+
+            <li>
+            <label class="normal" for="limitDataUl">Upload data limit :</label>
+            <input class="contract-info" type="number" id="limitDataUl" name="limitDataUl" min="1" step="1" lang="en">
+            <label class="normal" for="limitDataUl">Gb</label>
+            </li><br>
+
+            <li>
+            <label class="normal" for="unlimStartTime">Unlimited data period from</label>
+            <input class="contract-info" type="time" id="unlimStartTime" name="unlimStartTime">
+            <label class="normal" for="unlimEndTime">to</label>
+            <input class="contract-info" id="unlimEndTime" type="time" name="unlimEndTime">
+            </li>
+
+          </form>
+          <br>
+
+          <div class="center-buttons-container">
+            <button type="button" class="btn-wb" id="applyContractualSettingsButton">Apply</button>
+          </div>
+
+        </div>
+        <div class="result-message" id="resultContractMessage"></div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Contractual Quota Settings
+        </div>
+        <div class="panel-contract-quota">
+          <form name="quotaSettings">
+            <li>
+            <label class="normal" for="upateQuotaDl">Manual setting download quota :</label>
+            <input type="number" id="updateQuotaDl" name="updateQuotaDl" min="0" step="0.1" lang="en">
+            <label class="normal" for="upateQuotaDl">Gb</label>
+            </li><br>
+
+            <li>
+            <label class="normal" for="upateQuotaUl">Manual setting upload quota :</label>
+            <input type="number" id="updateQuotaUl" name="updateQuotaUl" min="0" step="0.1" lang="en">
+            <label class="normal" for="upateQuotaUl">Gb</label>
+            </li>
+          </form><br>
+
+          <div class="center-buttons-container">
+            <button type="button" class="btn-wb" id="applyManualQuotaButton">Apply</button>
+          </div>
+
+        </div>
+        <div class="result-message" id="resultQuotaMessage"></div>
+      </div>
+
+
+      <div class="center-buttons-container">
+        <button type="button" class="btn-wb" id="goToMainPageButton">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="contractual_settings.js"></script>
+<script src="utils/utils.js"></script>
+</html>
+
+

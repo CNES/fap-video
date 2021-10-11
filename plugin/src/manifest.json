@@ -1,0 +1,159 @@
+{
+  "author": "Viveris Technologies & CNES",
+  "name": "FAP",
+  "version": "1.2",
+  "manifest_version": 2,
+  "description": "It allows to monitor the Internet contract quota and apply prevention techniques to reduce data consumption.",
+  "icons": {
+    "19": "icons/icon1.png",
+    "16": "icons/icon1.png",
+    "32": "icons/icon1.png",
+    "48": "icons/icon1.png",
+    "64": "icons/icon1.png",
+    "96": "icons/icon1.png"
+  },
+  "background": {
+    "scripts": [
+      "webboost/background_wb.js",
+      "js/console.js",
+      "lib/lz4/lz4-block-codec-any.js",
+      "lib/punycode.js",
+      "lib/publicsuffixlist/publicsuffixlist.js",
+      "lib/regexanalyzer/regex.js",
+      "js/webext.js",
+      "js/vapi.js",
+      "js/vapi-common.js",
+      "js/vapi-background.js",
+      "js/vapi-webrequest.js",
+      "js/background.js",
+      "js/traffic.js",
+      "js/hntrie.js",
+      "js/strie.js",
+      "js/utils.js",
+      "js/uritools.js",
+      "js/lz4.js",
+      "js/cachestorage.js",
+      "js/assets.js",
+      "js/filtering-context.js",
+      "js/redirect-engine.js",
+      "js/dynamic-net-filtering.js",
+      "js/url-net-filtering.js",
+      "js/static-filtering-parser.js",
+      "js/static-net-filtering.js",
+      "js/static-ext-filtering.js",
+      "js/cosmetic-filtering.js",
+      "js/scriptlet-filtering.js",
+      "js/html-filtering.js",
+      "js/hnswitches.js",
+      "js/ublock.js",
+      "js/storage.js",
+      "js/logger.js",
+      "js/pagestore.js",
+      "js/tab.js",
+      "js/messaging.js",
+      "js/text-encode.js",
+      "js/contextmenu.js",
+      "js/reverselookup.js",
+      "js/start.js",
+      "js/commands.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "all_frames": true,
+      "js": ["utils/xdialog.3.4.0/xdialog.3.4.0.js", "features.js"],
+      "css": ["utils/xdialog.3.4.0/xdialog.3.4.0.css"]
+    },
+    {
+      "all_frames": true,
+      "js": [
+        "js/vapi.js",
+        "js/vapi-client.js",
+        "js/contentscript.js"
+      ],
+      "match_about_blank": true,
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file://*/*"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "all_frames": false,
+      "js": [
+        "js/scriptlets/subscriber.js"
+      ],
+      "matches": [
+        "https://easylist.to/*",
+        "https://*.fanboy.co.nz/*",
+        "https://filterlists.com/*",
+        "https://forums.lanik.us/*",
+        "https://github.com/*",
+        "https://*.github.io/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/icon1.png"
+    },
+    "default_title": "FAP",
+    "default_popup": "mainpage.html"
+  },
+  "permissions": [
+    "storage",
+    "webNavigation",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>",
+    "dns",
+    "menus",
+    "privacy",
+    "unlimitedStorage"
+  ],
+  "web_accessible_resources": [
+    "webboost/injectees/*",
+    "web_accessible_resources/*"
+  ],
+  "content_security_policy": "script-src 'self'; object-src 'self'; img-src 'self'",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "fap@viveris.net",
+      "strict_min_version": "57.0"
+    }
+  },
+  "commands": {
+    "_execute_browser_action": {},
+    "launch-element-picker": {
+      "description": "__MSG_popupTipPicker__"
+    },
+    "launch-element-zapper": {
+      "description": "__MSG_popupTipZapper__"
+    },
+    "launch-logger": {
+      "description": "__MSG_popupTipLog__"
+    },
+    "open-dashboard": {
+      "description": "__MSG_popupTipDashboard__"
+    },
+    "relax-blocking-mode": {
+      "description": "__MSG_relaxBlockingMode__"
+    }
+  },
+  "default_locale": "en",
+  "options_ui": {
+    "open_in_tab": true,
+    "page": "dashboard.html"
+  },
+  "sidebar_action": {
+    "default_icon": "icons/icon1.png",
+    "default_panel": "logger-ui.html",
+    "default_title": "__MSG_statsPageName__",
+    "open_at_install": false
+  }
+}

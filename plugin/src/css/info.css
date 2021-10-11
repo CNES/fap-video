@@ -1,0 +1,119 @@
+/*
+ * Copyright (c) Viveris Technologies.
+ * Licensed under the MIT license. See LICENSE file in the project root for details.
+ */
+
+body {
+	font-size: 11px;
+	color: rgb(200, 200, 200);
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	background-color: rgb(39, 43, 48);
+	font-variant: small-caps;
+}
+
+.normal, .info-heading, td {
+}
+
+.info-heading {
+	margin: 10px;
+}
+
+.panel-default {
+	border-color: rgba(0, 0, 0, 0.6);
+}
+
+.panel {
+	margin-top: 10px;
+	background-color: rgb(46, 51, 56);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.panel-heading {
+	overflow: hidden;
+	text-align: center;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.panel-body .row:last-child {
+	margin-top: 15px;
+}
+
+a, a:visited, a:hover, a:focus {
+	color: #e0e0e0;
+}
+
+.row:first-child {
+	margin-bottom: 10px;
+}
+
+.panel-default > .panel-heading {
+	color: rgb(200, 200, 200);
+	background-color: rgb(62, 68, 76);
+	border-color: rgba(0, 0, 0, 0.6);
+}
+
+.panel-stats {
+	width: 26em;
+}
+
+.panel-stats, .platform {
+	margin-bottom: 10px;
+}
+
+.platform {
+	margin-left: 0.5em;
+	font-size: 13px;
+	color: rgb(255, 215, 0);
+}
+
+.btn-wb {
+	background-color:#E0E0E0;
+	padding:0.3em 0.7em;
+	margin:0.5em 0.3em 1em 0;
+	border-radius:0.6em;
+	border-color:#839044;
+	border-width:2.5px;
+	box-sizing: border-box;
+	font-weight:400;
+	color:#000000;
+	text-align:center;
+	position:relative;
+}
+
+.center-buttons-container {
+	text-align: center;
+}
+
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+
+table, tr, th, td, .source {
+  text-align: center;
+}
+
+th {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+td {
+  font-variant: normal;
+}
+
+table.center {
+  width:70%; 
+  margin-left:15%; 
+  margin-right:15%;
+}
+
+.source {
+  font-size: 10px;
+  margin-bottom: 10px;
+}

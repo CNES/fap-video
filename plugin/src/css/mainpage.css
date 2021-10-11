@@ -1,0 +1,173 @@
+/*
+ * Copyright (c) Viveris Technologies.
+ * Licensed under the MIT license. See LICENSE file in the project root for details.
+ */
+
+body {
+	font-size: 11px;
+	color: rgb(200, 200, 200);
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	background-color: rgb(39, 43, 48);
+	font-variant: small-caps;
+}
+
+.normal, .stat-value, .stat-limit {
+	font-variant: normal;
+}
+
+.panel-default {
+	border-color: rgba(0, 0, 0, 0.6);
+}
+
+.panel {
+	margin-top: 10px;
+	background-color: rgb(46, 51, 56);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.panel-heading {
+	overflow: hidden;
+	text-align: center;
+	font-size: 17px;
+  font-weight: bold;
+}
+
+.panel-body .row:last-child {
+	margin-top: 15px;
+}
+
+a, a:visited, a:hover, a:focus {
+	color: #e0e0e0;
+}
+
+.row:first-child {
+	margin-bottom: 10px;
+}
+
+.panel-default > .panel-heading {
+	color: rgb(200, 200, 200);
+	background-color: rgb(62, 68, 76);
+	border-color: rgba(0, 0, 0, 0.6);
+}
+
+input {
+	color: black;
+}
+
+.input-container {
+	margin-right: 10px;
+}
+
+.switch-container, .input-container {
+	position: relative;
+	height: 5px;
+	top: 5px;
+	right: 0px;
+}
+
+.switch{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+.switch-tail {
+	cursor: pointer;
+	width: 30px;
+	height: 5px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+	position: absolute;
+	top: 0px;
+	left: 10px;
+}
+
+.switch-tail:after {
+	content: '';
+	position: absolute;
+	top: -3.5px;
+	left: 0px;
+	width: 12px;
+	height: 12px;
+	background: #E0E0E0;
+	border-radius: 90px;
+	transition: 0.4s;
+}
+
+input:checked + .switch-tail {
+	background: #839044;
+}
+
+input:checked + .switch-tail:after {
+	left: calc(100%);
+	transform: translateX(-100%);
+	background: #646e34;
+}
+
+
+.panel-stats > div > div {
+	display: inline-block;
+	text-align: left;
+	width: 13.5em;
+}
+
+.panel-stats, .panel-features {
+	margin-bottom: 10px;
+}
+
+.panel-features > div > div {
+	display: inline-block;
+	text-align: left;
+	width: 13.5em;
+}
+
+.stat-type, .saving-feature {
+	margin-left: 0.5em;
+	font-size: 13px;
+}
+
+.stat-name {
+	color: rgb(255, 215, 0);
+	margin-left: 1em;
+}
+
+.btn-wb {
+	background-color:#E0E0E0;
+	padding:0.3em 0.7em;
+	margin:0.5em 0.3em 1em 0;
+	border-radius:0.6em;
+	border-color:#839044;
+	border-width:2.5px;
+	box-sizing: border-box;
+	font-weight:400;
+	color:#000000;
+	text-align:center;
+	position:relative;
+}
+
+.center-buttons-container {
+	text-align: center;
+}
+
+#unlimPeriod, #nextRenewal {
+	font-size: 10px;
+	font-style: italic;
+	position: relative;
+	right: 30px;
+}
+
+.warningDaemon {
+	display: none;
+	color: orange;
+	cursor: help;
+}
+
+#warningIcon {
+	font-size: 2em;
+}
+
+.saving-feature {
+	cursor: help;
+}
+

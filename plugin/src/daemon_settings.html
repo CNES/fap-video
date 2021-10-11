@@ -1,0 +1,46 @@
+<!-- Copyright (c) Viveris Technologies. //-->
+<!-- Licensed under the MIT license. See LICENSE file in the project root for details. //-->
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FAP-Video</title>
+  <link rel="stylesheet" type="text/css" href="./webboost/injectees/bootstrap/3.1.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/daemon_settings.css"/>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Daemon Settings
+        </div>
+        <div class="panel-daemon-settings">
+          <form id="daemonSettings">
+            <label class="normal" for="daemonSettings">
+              Daemon IP address :
+              <input type="text" id="daemonIp" name="daemonIp" minlength="7" maxlength="15" size="15" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$">
+	      <br>
+	      Daemon port :
+              <input type="number" id="daemonPort" name="daemonPort" min="0" max="65535">
+            </label>
+          </form>
+          <div class="center-buttons-container">
+            <button type="button" class="btn-wb" id="applyDaemonSettingsButton">Apply</button>
+            <button type="button" class="btn-wb" id="goToMainPageButton">Close</button>
+          </div>
+        </div>
+      </div>
+      <div class="result-message" id="resultMessage"></div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="daemon_settings.js"></script>
+<script src="utils/utils.js"></script>
+</html>
+
+
