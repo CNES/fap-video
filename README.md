@@ -39,7 +39,7 @@ You find below the complete list of features :
 
 Install latest version of Firefox and add the add-on under xpi format :
 
-1.  Download the [fap-x.x.xpi](https://forge.net4sat.org/viveris/fap-video/blob/master/plugin/install/) file
+1.  Download the [fap-x.x.xpi](https://github.com/CNES/fap-video/tree/master/plugin/install) file
 2.  Go to the "Add-ons" management menu
 2.  Choose the option "Install Add-on from file"
 3.  Select the fap-x.x.xpi file 
@@ -51,18 +51,22 @@ Install latest version of Firefox and add the add-on under xpi format :
 You need to clone (or download) the project and run the install script : 
 
 ```
-# git clone https://forge.net4sat.org/viveris/fap-video.git
+# git clone https://github.com/CNES/fap-video.git
 # cd fap-video/daemon/install
 # sudo ./install_daemon.sh # Add optionally IP and Port to listen to
-
 ```
-The script install_daemon.sh will launch automatically the Daemon at the end of the install. The Daemon opens a socket to listen to the Plugin's requests. By default, the Daemon listens to all IP addresses (0.0.0.0) and port 8123.
-You can change that network configuration by adding the IP and the Port. In the following example, the Daemon will only listen to the IP 192.168.1.1 and the Port 6389 :
+
+The script `install_daemon.sh` will launch automatically the Daemon at the end of the install. The Daemon opens
+a socket to listen to the Plugin's requests. By default, the Daemon listens to all IP addresses (0.0.0.0) and port 8123.
+You can change that network configuration by adding the IP and the Port. In the following example, the Daemon
+will only listen to the IP 192.168.1.1 and the Port 6389:
+
 ```
 # sudo ./install_daemon.sh 192.168.1.1 6389 
-
 ```
-The Daemon is launched as a systemd service unit named “fap_daemon”, so you can manage it with "systemctl" tool. The service takes the IP address and the port as mandatory arguments with the following syntax :
+
+The Daemon is launched as a systemd service unit named `fap_daemon`, so you can manage it with "systemctl" tool.
+The service takes the IP address and the port as mandatory arguments with the following syntax:
 **fap_daemon@< ip_addr >:< port >.service**
 
 ## Configuration
@@ -79,9 +83,11 @@ All this information (contract settings and data consumption) is stored locally 
 
 ## Plugin’s build instructions (for developers)
 Clone (or download) the project and run the build script :
+
 ```
-# git clone https://forge.net4sat.org/viveris/fap-video.git
+# git clone https://github.com/CNES/fap-video.git
 # cd fap-video/plugin/src/
 # ./tools/make.sh
 ```
+
 The results of the build will be available in ```fap-video/plugin/src/build/```
